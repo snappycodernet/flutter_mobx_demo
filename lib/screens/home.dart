@@ -4,7 +4,7 @@ import 'package:flutter_mobx_demo/mobx/user_store.dart';
 import 'package:flutter_mobx_demo/models/post.dart';
 import 'package:flutter_mobx_demo/services/api_service.dart';
 
-import '../models/User.dart';
+import '../models/user.dart';
 
 final userStore = UserStore();
 

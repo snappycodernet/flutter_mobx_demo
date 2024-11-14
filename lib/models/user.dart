@@ -1,3 +1,5 @@
+import 'package:mobx/mobx.dart';
+
 import 'address.dart';
 import 'company.dart';
 

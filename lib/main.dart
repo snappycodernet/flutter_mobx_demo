@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx_demo/screens/home.dart';
+import 'package:flutter_mobx_demo/screens/riverpod_home.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+MyApp mobXApp() => const MyApp(home: Home());
+ProviderScope riverPodApp() => const ProviderScope(child: MyApp(home: RiverpodHome()));
 
 void main() {
-  runApp(const MyApp());
+  runApp(riverPodApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final Widget home;
+
+  const MyApp({required this.home, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home()
+      home: home
     );
   }
 }

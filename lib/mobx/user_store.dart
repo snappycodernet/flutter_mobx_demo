@@ -1,5 +1,5 @@
 import 'package:mobx/mobx.dart';
-import '../models/User.dart';
+import '../models/user.dart';
 import '../models/post.dart';
 
 part 'user_store.g.dart';
@@ -10,8 +10,8 @@ abstract class _UserStore with Store {
   @observable
   User? activeUser;
 
-  @observable
-  List<Post> userPosts = List.empty();
+  @MakeObservable(useDeepEquality: true)
+  List<Post> userPosts = [];
 
   @action loginUser(User userModel) {
      activeUser = userModel;

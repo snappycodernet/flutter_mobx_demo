@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../models/User.dart';
+import '../models/user.dart';
 import '../models/post.dart';
 
 class ApiService {
