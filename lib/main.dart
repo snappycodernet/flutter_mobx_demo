@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx_demo/screens/home.dart';
 import 'package:flutter_mobx_demo/screens/riverpod_home.dart';
+import 'package:flutter_mobx_demo/screens/riverpod_user_details.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 MyApp mobXApp() => const MyApp(home: Home());
@@ -23,7 +24,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: home
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: const Text('Riverpod State Management Demo')
+        ),
+        body: home,
+      )
     );
   }
 }
