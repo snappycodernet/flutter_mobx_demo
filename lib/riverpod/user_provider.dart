@@ -30,8 +30,12 @@ class UserNotifier extends StateNotifier<UserProviderState> {
   }
 
   void toggleUserFavorite(int userId) {
-    if (state.favoriteUserIds.contains(userId)) {
+    if (!state.favoriteUserIds.contains(userId)) {
       var favs = [...state.favoriteUserIds, userId];
+      state = copyWith(favoriteUserIds: favs);
+    }
+    else {
+      var favs = [...state.favoriteUserIds.where((id) => id != userId)];
       state = copyWith(favoriteUserIds: favs);
     }
   }
